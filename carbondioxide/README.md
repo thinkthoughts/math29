@@ -1,13 +1,10 @@
-# carbondioxide.now — Reading points update
+# RLT shared-style HTML update
 
-Replace the site-root `index.html` and `style.css` with the files in this package.
+Replace only `RLT/index.html` on carbondioxide.now.
 
-- Header **RLT** link still targets `RLT/`.
-- Original infographic paths are unchanged; preserve the existing `assets/` directory and its PNG files.
-- New homepage sections: **Reading Level Test** followed by **Reading points — Nonfiction vs Fiction**, including Peter Brannen’s book.
-- Footer: “Leading specifications admit trailing generalizations.”
-- Dark/light hero-action colors now switch with `data-theme`.
-- The existing `RLT/`, `scripts/theme.js`, and `data/` directories should remain in place; none are overwritten.
-- CSS URL changed to `?v=20261116e` for cache refresh.
-
-No book artwork has been included; the reading point uses typography rather than an unlicensed cover image.
+- Removed the `rlt-page`, `rlt-hero`, `rlt-eyebrow`, and `rlt-footer` classes.
+- Uses the shared `hero plain`, `shell`, `count`, and `footer` components.
+- The top label now uses the exact same `count` class as `01 / PHYSICAL READING POINT`, yielding the same uppercase letter-spacing and typography.
+- Keeps the user-edited masthead, light-mode default, and existing content intact.
+- Uses `../style.css?v=20261116g` to refresh styling. The current shared stylesheet from the reading-points update supplies these generic classes.
+- No homepage HTML, stylesheet, assets, or scripts are replaced.
