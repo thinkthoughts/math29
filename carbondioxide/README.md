@@ -1,49 +1,27 @@
-# carbondioxide.now — shared CSS + light/dark toggle
+# carbondioxide.now — original illustrated homepage + RLT
 
-## Important: preservation of your existing homepage
+This release restores the **original three-chapter homepage** supplied as `Pasted text(20261116-161937).txt`, while retaining the shared theme script and RLT exhibit. The previous packages accidentally replaced that illustrated homepage with a simplified draft.
 
-The earlier ZIP supplied `style.css` and `RLT/index.html` but **not** the current
-production homepage `index.html`, and the live page could not be retrieved.
-The root `index.html` in THIS package is therefore a **replacement draft**, not a
-byte-for-byte update of your existing infographic homepage. **Do not overwrite
-your production `index.html`** unless you deliberately want the replacement.
-Its structure retains the known sections but not the unavailable original graphic.
+## Install
 
-## Deploy without replacing your existing homepage
+Upload `index.html`, `style.css`, `RLT/index.html`, and `scripts/theme.js` in their matching web-root paths. `data/co2-reading-point.json` and `assets/co2-molecule.svg` are included for the RLT example.
 
-1. Upload `style.css`, `scripts/theme.js`, `RLT/index.html`,
-   `assets/co2-molecule.svg`, `data/co2-reading-point.json`.
-2. Add to your existing homepage `<html>`:
-   `data-theme="dark" data-default-theme="dark" data-theme-key="home"`.
-3. Add `<script src="/scripts/theme.js" defer></script>` to its `<head>`.
-4. Put the button below in the existing masthead nav (or nearby):
+**CRITICAL: keep your existing `assets/` PNG files on the server.** These four original images were not included in the earlier packages or the provided HTML upload and are NOT reproduced in this ZIP:
 
-```html
-<button class="theme-toggle" type="button" data-theme-toggle
-        aria-label="Switch to light mode" aria-pressed="true">
-  <span class="theme-icon" aria-hidden="true">☀</span>
-  <span class="theme-label">Light mode</span>
-</button>
-```
+- `assets/overview.png`
+- `assets/breath-carbon-deep-time.png`
+- `assets/gender-brain-consent.png`
+- `assets/equality-systems-value.png`
 
-5. Add `<a href="/RLT/">RLT ↗</a>` to the existing homepage navigation.
+The original HTML also references `assets/favicon.svg`. Keep that existing file too. This ZIP includes `assets/co2-molecule.svg` only. **Do not delete, replace, or synchronize-overwrite the entire remote `assets/` folder.** If those image files have already been deleted, restore them from your prior infographic website backup or original graphics source; HTML/CSS alone cannot restore missing image bytes.
 
-Alternatively, use the included root `index.html` as a starter/replacement draft.
+## Page defaults
 
-## File structure
+- `/`: dark
+- `/RLT/`: light
 
-- `index.html` — replacement HOME DRAFT, defaults dark
-- `style.css` — all shared styles plus RLT-specific page rules
-- `RLT/index.html` — CO₂ exhalation reading-point example, defaults light
-- `scripts/theme.js` — accessible theme toggle, separate saved preference per page
-- `data/co2-reading-point.json` — local read-only manifest of sources and proof scope
-- `assets/co2-molecule.svg` — reusable molecule schematic, not experimental evidence
+Both use one root stylesheet and `scripts/theme.js`, with independent browser-stored user preferences. Buttons and navigation have matched geometry across both pages. Reload the versioned `style.css?v=20261116c` after deployment.
 
-No `RLT/rlt.css` remains. No external JavaScript or fonts.
+## Scope
 
-## Verification honesty
-
-The earlier RLT content refers to source-published arithmetic proof examples.
-This static site build does **not** rerun the kernel, pin a new certificate,
-or prove human exhalation through arithmetic. The physical reading point is
-presented as a target of formal specification and empirical correspondence.
+Preserves the full illustrated original homepage (breath, care, systems) and adds a `RLT` link in the header and a hero CTA. The RLT page states the formal and empirical checking boundaries clearly.
