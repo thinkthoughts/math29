@@ -125,7 +125,7 @@ a:focus-visible {
   color:#b4e178;
 }
 .hero h1 {
-  color:skyblue;
+  color:var(--heading-color);
   font-size:clamp(3.4rem,9vw,8rem);
   font-weight:700;
   letter-spacing:-.045em;
@@ -524,6 +524,7 @@ footer {
   --nav-surface: #05264a;
   --nav-ink: #f7fbff;
   --nav-link: #9ee96c;
+  --heading-color: #16425b;
   color-scheme: light;
 }
 
@@ -538,12 +539,19 @@ html[data-theme="dark"] {
   --nav-surface: #031625;
   --nav-ink: #f4faff;
   --nav-link: #b7ec83;
+  --heading-color: skyblue;
   color-scheme: dark;
 }
 
 html[data-theme="light"] {
   color-scheme: light;
 }
+
+/* Shared heading color: dark = sky blue; light = deep blue. */
+body h1 {
+  color: var(--heading-color);
+}
+
 
 body {
   background: var(--page-bg);
@@ -620,7 +628,7 @@ html[data-theme="light"] .home-page .hero {
               linear-gradient(135deg, #eff7f5, #e9f0f7);
   color: #16344c;
 }
-html[data-theme="light"] .home-page .hero h1 { color: #16425b; }
+html[data-theme="light"] .home-page .hero h1 { color: var(--heading-color); }
 html[data-theme="light"] .home-page .hero h1 em { color: #188027; }
 html[data-theme="light"] .home-page .hero-detail { color: #41586b; }
 html[data-theme="light"] .home-page .hero .eyebrow { color: #188027; }
@@ -632,9 +640,9 @@ html[data-theme="light"] .home-page .closing-triad span { border-color: #839caa;
 html[data-theme="light"] .home-page .backtop { color: #0c704c; }
 
 /* ==============================================================
-   RLT EXHIBIT — self-contained components, same palette and toggle.
+   RLT LAYOUT — structure only; all colors come from shared theme.
    ============================================================== */
-/* RLT page components: shared theme tokens, one stylesheet. */
+/* Layout selectors retain existing markup; no RLT-specific color palette. */
 
 
 body.rlt-page {
@@ -1031,23 +1039,8 @@ body.rlt-page {
 }
 
 .rlt-page {
-  --text: #1c2927;
-  --muted: #62706c;
-  --line: #d8ded8;
-  --page-bg: #fafbf7;
-  --card-bg: #f0f4ee;
-  --link: #246956;
   font-weight: 350;
   -webkit-font-smoothing: antialiased;
-}
-
-html[data-theme="dark"] .rlt-page {
-  --text: #e8f1ed;
-  --muted: #b8cfc7;
-  --line: #335149;
-  --page-bg: #0c1c1b;
-  --card-bg: #152e2a;
-  --link: #9ce4b8;
 }
 
 .rlt-page .rlt-hero {
@@ -1056,7 +1049,7 @@ html[data-theme="dark"] .rlt-page {
   padding: 88px 32px 82px;
 }
 .rlt-page .rlt-hero h1 {
-  color: var(--text);
+  color: var(--heading-color);
   font-weight: 200;
 }
 .rlt-page .rlt-eyebrow { color: var(--link); }
