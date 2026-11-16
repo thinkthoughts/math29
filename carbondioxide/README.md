@@ -1,7 +1,10 @@
-# One shared H1 rule (2026-11-16e)
+# Shared controls update
 
-- Replace the root `style.css` only; leave your working homepage, header, scripts, and graphics unchanged.
-- All pages use exactly one `h1` CSS rule. Dark: `skyblue`; light: `#16425b`. Size, weight and spacing are also shared.
-- `RLT/index.html` is included only to refresh its stylesheet cache URL. Your updated header is preserved.
-- Change the existing homepage stylesheet URL to `style.css?v=20261116e` if necessary.
-- RLT layout classes remain for its proof cards and grids, but **there are no page-specific H1 selectors**.
+Replace **only** the root `style.css` with this file. Your existing homepage, images, RLT page and `scripts/theme.js` do not need to change.
+
+- Both theme toggles are icon-only, 60px wide. JavaScript retains the accessible aria-label/title and updates the icon.
+- Hovering over RLT action buttons no longer underlines them; the background and border change instead.
+- Homepage buttons and navigation also remain free of hover underlines.
+- All shared headings, components, page layouts and light/dark defaults are preserved.
+
+If the browser retains an old stylesheet, use a hard refresh or increment the `?v=` query in both pages' stylesheet links.
