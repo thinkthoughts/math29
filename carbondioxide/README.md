@@ -1,4 +1,4 @@
-# carbondioxide.now — self-contained website, version 1
+# carbondioxide.now — self-contained website, version 1.1
 
 This is a standalone illustrated `index.html` based on the supplied three-column infographic.
 
@@ -31,3 +31,7 @@ Change text in `index.html`, styles in `style.css`, and replace image files with
 ## Image note
 
 The infographic is user-supplied. Panel graphics are cropped directly from it; no external imagery is needed. The crop files intentionally keep the embedded text and original artwork together.
+
+## Typography update (v1.1)
+
+The masthead wordmark and main “Carbon dioxide now.” heading use ultra-light system font weight (`100`) and refined, modestly negative tracking (`-.025em` and `-.045em`). Actual stroke thickness depends on locally available system fonts; no remote font downloads are required.
