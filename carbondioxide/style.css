@@ -690,3 +690,38 @@ footer a { color: var(--nav-link); }
   .foot, .source { flex-direction: column; }
   .source { gap: 4px; }
 }
+
+/* Unified hero actions: visible contrast in both page themes. */
+html[data-theme="dark"] .hero-actions .primary-link {
+  background: #b9e968;
+  color: #062448;
+  border: 1px solid #b9e968;
+}
+html[data-theme="dark"] .hero-actions .secondary-link {
+  background: transparent;
+  color: #f2f9ff;
+  border: 1px solid rgba(255, 255, 255, .57);
+}
+html[data-theme="light"] .hero-actions .primary-link {
+  background: #16425b;
+  color: #ffffff;
+  border: 1px solid #16425b;
+}
+html[data-theme="light"] .hero-actions .secondary-link {
+  background: #ffffff;
+  color: #16425b;
+  border: 1px solid #839caa;
+}
+.hero-actions a:hover {
+  filter: brightness(.94);
+  text-decoration: none;
+}
+.hero-actions a:focus-visible {
+  outline: 3px solid #e5a900;
+  outline-offset: 3px;
+}
+/* Shared, neutral component spacing for book/readings cards. */
+.card p + p { margin-top: 14px; }
+.section .lead { color: var(--text); }
+.section .card h3 { margin-top: 12px; }
+.section .card cite { font-style: italic; }

@@ -1,10 +1,13 @@
-# Shared controls update
+# carbondioxide.now — Reading points update
 
-Replace **only** the root `style.css` with this file. Your existing homepage, images, RLT page and `scripts/theme.js` do not need to change.
+Replace the site-root `index.html` and `style.css` with the files in this package.
 
-- Both theme toggles are icon-only, 60px wide. JavaScript retains the accessible aria-label/title and updates the icon.
-- Hovering over RLT action buttons no longer underlines them; the background and border change instead.
-- Homepage buttons and navigation also remain free of hover underlines.
-- All shared headings, components, page layouts and light/dark defaults are preserved.
+- Header **RLT** link still targets `RLT/`.
+- Original infographic paths are unchanged; preserve the existing `assets/` directory and its PNG files.
+- New homepage sections: **Reading Level Test** followed by **Reading points — Nonfiction vs Fiction**, including Peter Brannen’s book.
+- Footer: “Leading specifications admit trailing generalizations.”
+- Dark/light hero-action colors now switch with `data-theme`.
+- The existing `RLT/`, `scripts/theme.js`, and `data/` directories should remain in place; none are overwritten.
+- CSS URL changed to `?v=20261116e` for cache refresh.
 
-If the browser retains an old stylesheet, use a hard refresh or increment the `?v=` query in both pages' stylesheet links.
+No book artwork has been included; the reading point uses typography rather than an unlicensed cover image.
