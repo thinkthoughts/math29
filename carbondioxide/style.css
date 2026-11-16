@@ -531,12 +531,11 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
-/* One and only one h1 rule. */
 h1 {
   color: var(--heading-color);
   font-size: clamp(3.3rem, 8vw, 7rem);
   font-weight: 200;
-  letter-spacing: -.055em;
+  letter-spacing: -.03em;
   line-height: 1.02;
   margin: 17px 0 30px;
   max-width: 1000px;
