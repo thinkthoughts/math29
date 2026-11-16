@@ -1,0 +1,55 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.76in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue!55!black]{hyperref}
+\usepackage{microtype}
+\usepackage{enumitem}
+\definecolor{navy}{HTML}{16425B}
+\definecolor{ink}{HTML}{142335}
+\definecolor{muted}{HTML}{526272}
+\color{ink}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.47em}
+\setlist[itemize]{leftmargin=*,nosep,topsep=2pt}
+\newcommand{\sectionlabel}[1]{\vspace{0.35em}{\large\color{navy}\bfseries #1}\par\vspace{0.1em}}
+\begin{document}
+{\Large\color{navy} Independent research in automated reasoning}\par
+{\small\color{muted} AWS Applied Scientist, Automated Reasoning \quad|\quad Job ID 10502706}\vspace{0.7em}
+
+Dear AWS Automated Reasoning Team,
+
+In terms of \textbf{``PhD or equivalent research experience,''} I have researched independently, developed Lean-verified results, and, as a solo developer, built an independent theorem prover: \textbf{Reading Level Test (RLT)}. My research is documented in mathematical papers, source code, formal statements, tests, and reproducible verification records.
+
+\sectionlabel{Two mathematical research foundations}
+\textbf{General Divisor Theorem (GDT)}\\
+\href{https://goodmath.app/divisor.pdf}{goodmath.app/divisor.pdf} \quad \textbar\quad local: \texttt{resume/divisor.pdf}
+\[
+T_{\min}=mR,\qquad d=\operatorname{rad}(\gcd(m,N)),\qquad
+R=\frac{\operatorname{rad}(N)}{d}.
+\]
+The theorem specifies a minimal period for the admissible residue-conditioned sequence under the paper's hypotheses. Its Lean formalization includes period, count, density, and correction-factor results.
+
+\textbf{translatePi --- Exact Rational Integration over Constrained Simplices}\\
+\href{https://translatepi.ai/main.pdf}{translatepi.ai/main.pdf} \quad \textbar\quad local: \texttt{resume/translatePi.pdf}
+\[
+\int_{\Delta_m(R)} \prod_{i=1}^{m}x_i^{e_i}\,dx
+=\frac{R^{m+\sum_{i=1}^{m}e_i}\prod_{i=1}^{m}e_i!}{\left(m+\sum_{i=1}^{m}e_i\right)!}.
+\]
+This is Theorem 2.2 (\texttt{simplex\_integral}) of the uploaded paper, for $m\in\mathbb N$, $R\geq 0$, and $e\in\mathbb N^m$. The paper also documents formal results on rational Gram entries, symmetric polynomial bases, and certified coefficient calculations, and a defined program of further research.
+
+\sectionlabel{From formalized mathematics to an independent prover}
+I designed RLT to distinguish \emph{written expressions}, \emph{reading conventions}, \emph{proved relationships}, and \emph{physical evidence records}. Its proof-checking kernel and explicit assumptions make it possible to inspect what was proved, under which rules, and where source correspondence or physical applicability is established.
+
+Additional engineering includes a Lean toolchain port and strict certification workflow for \textbf{39/39 theorems} in DeepSeek-Prover-V2, with independent kernel replay, and Lean models and automated tests for AI inference behavior in DeepInfer.
+
+\sectionlabel{Where the research extends automated reasoning}
+I can advance automated reasoning where proof validity, specification fidelity, and evidence provenance meet. The physical reading-point exhibit \href{https://carbondioxide.now/RLT/}{``CO$_2$ is exhaled''} illustrates how RLT separates a written empirical claim from checked arithmetic and the evidence necessary to support its physical correspondence. This approach extends what automated reasoning systems can specify, prove, and independently audit.
+
+{\small\color{muted} Sources: \href{https://github.com/thinkthoughts/rlt}{github.com/thinkthoughts/rlt} \quad\textbar\quad \href{https://formalize.now/rlt/}{formalize.now/rlt} \quad\textbar\quad \href{https://github.com/thinkthoughts}{github.com/thinkthoughts}}\par
+\vspace{0.3em}
+Sincerely,\\
+\textit{Dan Hawkley}
+\end{document}

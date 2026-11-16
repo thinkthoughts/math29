@@ -1,0 +1,107 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.73in,top=0.68in,bottom=0.68in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[colorlinks=true,urlcolor=navy]{hyperref}
+\definecolor{navy}{HTML}{16425B}
+\definecolor{ink}{HTML}{142335}
+\definecolor{muted}{HTML}{526272}
+\definecolor{line}{HTML}{D8E0E7}
+\color{ink}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.27em}
+\setlist[itemize]{leftmargin=1.12em,topsep=2pt,itemsep=2.5pt,parsep=0pt}
+\titleformat{\section}{\color{navy}\large\bfseries}{}{0em}{}[\vspace{-0.35em}\color{line}\titlerule]
+\titlespacing*{\section}{0pt}{0.8em}{0.35em}
+\newcommand{\entry}[2]{\textbf{#1}\hfill {\small\color{muted}#2}\par}
+\newcommand{\site}[2]{\href{#1}{\textcolor{navy}{#2}}}
+\newcommand{\subline}[1]{{\small\color{muted}#1}\par}
+\pagestyle{empty}
+\begin{document}
+{\fontsize{24}{27}\selectfont\color{navy}\bfseries Dan Hawkley}\par
+\vspace{2pt}
+{\large Independent Research Engineer \textbar{} Theorem Prover}\par
+\subline{Automated Reasoning \textbar{} Lean 4 \textbar{} Formal Verification \textbar{} Scientific Specification}
+\vspace{4pt}
+{\small
+\site{https://github.com/thinkthoughts}{github.com/thinkthoughts}\quad\textbar\quad
+\site{https://formalize.now/rlt/}{formalize.now/rlt}\quad\textbar\quad
+\site{https://carbondioxide.now/RLT/}{carbondioxide.now/RLT/}\par
+\site{https://www.linkedin.com/in/dan-hawkley/}{linkedin.com/in/dan-hawkley/}\quad\textbar\quad
+\site{https://carbondioxide.now/resume/}{carbondioxide.now/resume/}
+}
+
+\section*{Research Profile}
+Independent researcher and engineer developing mathematical formalizations, machine-checked proof systems, and reproducible verification infrastructure. Built Reading Level Test (RLT) as a solo developer following mathematical research documented in \emph{General Divisor Theorem} and \emph{translatePi}. Research concerns the boundary between what a formal system proves, the written specification it represents, and the evidence supporting its application.
+
+\section*{Original Research and Theorem-Prover Development}
+\entry{Reading Level Test (RLT) --- Independent Theorem Prover}{2026}
+\begin{itemize}
+  \item Designed and implemented a Rust-based proof checker with a compact 20-rule kernel and explicit axiom registration; developed acceptance tests and adversarial audits of soundness boundaries.
+  \item Separated reading conventions, original expressions, proved relationships, and physical evidence records, supporting assumption-preserving verdicts and source-correspondence review.
+  \item Built interfaces for checking, explaining, tracing dependencies, and composing results. The CO$_2$ reading-point demonstration pairs kernel-checked arithmetic with explicit empirical-evidence requirements for physical claims.
+\end{itemize}
+\subline{\site{https://github.com/thinkthoughts/rlt}{Source and tests} \textbar{} \site{https://carbondioxide.now/RLT/}{Physical reading-point exhibit}}
+
+\section*{Selected Mathematical Papers and Formal Results}
+\entry{General Divisor Theorem (GDT)}{2026}
+\subline{\site{https://goodmath.app/divisor.pdf}{divisor.pdf} \textbar{} \site{https://github.com/thinkthoughts/general-divisor-theorem}{Lean repository}}
+Derives and formally checks results for admissible residue-conditioned sequences, including a minimal period, counts, density, and a totient correction identity:
+\[
+T_{\min}=mR,\qquad d=\operatorname{rad}(\gcd(m,N)),\qquad
+R=\frac{\operatorname{rad}(N)}{d}.
+\]
+The Lean formalization passed an independent mechanical verification run, with documented correspondence between the formal and informal theorem statements.
+
+\entry{translatePi --- Exact Rational Integration over Constrained Simplices}{2026}
+\subline{\site{https://translatepi.ai/main.pdf}{translatePi paper} \textbar{} \site{https://github.com/thinkthoughts/lean-bgp212}{Lean source and verification records}}
+Proves simplex-moment identities, rational representations of Gram entries, and selected exact certificates; develops symmetric-function and profile-based evaluation with independent Lean checks:
+\[
+\int_{\Delta_m(R)}\prod_{i=1}^{m}x_i^{e_i}\,dx
+=\frac{R^{m+\sum_{i=1}^{m}e_i}\prod_{i=1}^{m}e_i!}
+{\left(m+\sum_{i=1}^{m}e_i\right)!}.
+\]
+The paper documents certified components and identifies the full numerical Gram matrices and final variational inequality as subsequent research targets.
+
+\newpage
+{\small\color{muted}DAN HAWKLEY\hfill RESEARCH ENGINEERING \textbar{} SELECTED ARTIFACTS}\par
+\vspace{0.25em}
+\section*{Proof Certification and Systems Engineering}
+\entry{DeepSeek-Prover-V2 --- Lean Port and Strict Verifier}{2026}
+\begin{itemize}
+  \item Ported a 39-theorem mathematical formalization to the project's Lean toolchain; achieved 39/39 certification in a documented workflow.
+  \item Implemented strict kernel replay and independent \texttt{lean4checker} verification; preserved theorem signatures and reported proof assumptions, build versions, and reproducibility outcomes.
+\end{itemize}
+\subline{\site{https://github.com/thinkthoughts/DeepSeek-Prover-V2}{Repository and verification reports}}
+
+\entry{DeepInfer --- SWA Store-Slot Formal Model}{2026}
+\begin{itemize}
+  \item Developed Lean theorems modeling sliding-window attention store-slot arithmetic and automated tests of corresponding compiled C++ behavior.
+  \item Reported proved model properties alongside corresponding compiled C++ runtime tests.
+\end{itemize}
+\subline{\site{https://github.com/thinkthoughts/DeepInfer}{Repository and technical report}}
+
+\section*{Research Methods and Technical Practice}
+\textbf{Proof and specification:} Lean 4, independent proof kernels, mathematical logic, theorem formalization, explicit assumptions, proof replay, specification-fidelity auditing.\par
+\textbf{Implementation:} Rust, Python, Lean, automated tests, Git, Linux, reproducible builds, formal models of AI inference behavior.\par
+\textbf{Verification artifacts:} Checked statements and source code, comparator suites, theorem signatures, adversarial controls, build logs, and verification scope records.
+
+\section*{Research Direction}
+Develop automated reasoning where \textbf{proof validity, written-source fidelity, and evidential correspondence} are separately inspectable. RLT combines an implemented independent proof kernel with continuing research into source-level specifications, physical evidence records, and auditable proof correspondence.
+
+\section*{Professional Experience}
+\textbf{Web Developer --- S\&P Global}\hfill {\small\color{muted}Oct 2011--Feb 2024}\\
+{\small Boulder, Colorado}
+
+\section*{Education}
+\textbf{Brigham Young University}\hfill {\small\color{muted}1993}\\
+{\small B.A., English Language and Literature}
+
+\vfill
+{\small\color{muted}Selected papers and accompanying proof records: \site{https://carbondioxide.now/resume/}{carbondioxide.now/resume/}. \quad Research source: \site{https://github.com/thinkthoughts}{github.com/thinkthoughts}.}
+\end{document}
