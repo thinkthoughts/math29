@@ -1,37 +1,49 @@
-# carbondioxide.now — self-contained website, version 1.1
+# carbondioxide.now — shared CSS + light/dark toggle
 
-This is a standalone illustrated `index.html` based on the supplied three-column infographic.
+## Important: preservation of your existing homepage
 
-## Open the site
+The earlier ZIP supplied `style.css` and `RLT/index.html` but **not** the current
+production homepage `index.html`, and the live page could not be retrieved.
+The root `index.html` in THIS package is therefore a **replacement draft**, not a
+byte-for-byte update of your existing infographic homepage. **Do not overwrite
+your production `index.html`** unless you deliberately want the replacement.
+Its structure retains the known sections but not the unavailable original graphic.
 
-Unzip the archive, then open `index.html` in any modern browser. No web server, build tool, third-party library, CDN, analytics, or network connection is required. To publish it, upload **the entire extracted folder contents** to the site's web root, keeping the `assets/` directory in place.
+## Deploy without replacing your existing homepage
 
-## Files
+1. Upload `style.css`, `scripts/theme.js`, `RLT/index.html`,
+   `assets/co2-molecule.svg`, `data/co2-reading-point.json`.
+2. Add to your existing homepage `<html>`:
+   `data-theme="dark" data-default-theme="dark" data-theme-key="home"`.
+3. Add `<script src="/scripts/theme.js" defer></script>` to its `<head>`.
+4. Put the button below in the existing masthead nav (or nearby):
 
-- `index.html` — page content, internal chapter links, accessible descriptions
-- `style.css` — responsive styles using only system fonts
-- `assets/overview.png` — full original infographic (unaltered content)
-- `assets/breath-carbon-deep-time.png` — crop from original panel 1
-- `assets/gender-brain-consent.png` — crop from original panel 2
-- `assets/equality-systems-value.png` — crop from original panel 3
-- `assets/favicon.svg` — small local CO₂ symbol
+```html
+<button class="theme-toggle" type="button" data-theme-toggle
+        aria-label="Switch to light mode" aria-pressed="true">
+  <span class="theme-icon" aria-hidden="true">☀</span>
+  <span class="theme-label">Light mode</span>
+</button>
+```
 
-## Organization
+5. Add `<a href="/RLT/">RLT ↗</a>` to the existing homepage navigation.
 
-1. Breath, Carbon & Deep Time
-2. Gender Equality, Brain Health & Consent
-3. Equality, Systems & True Value
+Alternatively, use the included root `index.html` as a starter/replacement draft.
 
-The page retains the wording and illustrations in the infographic panels and adds explanatory reading passages. The explanatory copy distinguishes mathematical symbolism, scientific observations, and ethical claims. All page links point to sections within this page; no external links are included.
+## File structure
 
-## Editing
+- `index.html` — replacement HOME DRAFT, defaults dark
+- `style.css` — all shared styles plus RLT-specific page rules
+- `RLT/index.html` — CO₂ exhalation reading-point example, defaults light
+- `scripts/theme.js` — accessible theme toggle, separate saved preference per page
+- `data/co2-reading-point.json` — local read-only manifest of sources and proof scope
+- `assets/co2-molecule.svg` — reusable molecule schematic, not experimental evidence
 
-Change text in `index.html`, styles in `style.css`, and replace image files with the same names if the infographic evolves. You can view the page offline by double-clicking `index.html`.
+No `RLT/rlt.css` remains. No external JavaScript or fonts.
 
-## Image note
+## Verification honesty
 
-The infographic is user-supplied. Panel graphics are cropped directly from it; no external imagery is needed. The crop files intentionally keep the embedded text and original artwork together.
-
-## Typography update (v1.1)
-
-The masthead wordmark and main “Carbon dioxide now.” heading use ultra-light system font weight (`100`) and refined, modestly negative tracking (`-.025em` and `-.045em`). Actual stroke thickness depends on locally available system fonts; no remote font downloads are required.
+The earlier RLT content refers to source-published arithmetic proof examples.
+This static site build does **not** rerun the kernel, pin a new certificate,
+or prove human exhalation through arithmetic. The physical reading point is
+presented as a target of formal specification and empirical correspondence.

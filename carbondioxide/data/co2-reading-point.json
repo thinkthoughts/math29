@@ -1,0 +1,28 @@
+{
+  "id": "CO2-EXHALED-EXAMPLE-001",
+  "display_statement": "CO₂ is exhaled.",
+  "record_kind": "illustrative physical reading point",
+  "formalization_description": "preserves written claim, conventions, checked counts and evidence status as separate layers",
+  "proven_here": false,
+  "physical_correspondence_status": "not established by the referenced RLT molecule count record",
+  "source_repo": "https://github.com/thinkthoughts/rlt",
+  "reading_point_source": "https://github.com/thinkthoughts/rlt/blob/main/points/co2-and-o2.yaml",
+  "count_examples": [
+    {
+      "claim": "CO₂ atom count: 1 + 2 = 3",
+      "proof_path": "tests/accept/T7_one_plus_two.rlt",
+      "status": "source-referenced; not rerun for this website build"
+    },
+    {
+      "claim": "O₂ atom count: 1 + 1 = 2",
+      "proof_path": "tests/accept/T6_one_plus_one.rlt",
+      "status": "source-referenced; not rerun for this website build"
+    },
+    {
+      "claim": "Combined atom count: 1 + 1 + 1 + 1 + 1 = 5",
+      "proof_path": "tests/accept/R_math5_count.rlt",
+      "status": "source-referenced; not rerun for this website build"
+    }
+  ],
+  "next_step": "Pin a specific exhalation evidence record, statement and reproducible checker output."
+}

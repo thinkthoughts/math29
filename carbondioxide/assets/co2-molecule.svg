@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 220" role="img" aria-labelledby="title desc">
+  <title id="title">Schematic carbon dioxide molecule</title>
+  <desc id="desc">Oxygen double bonded to carbon double bonded to oxygen. This is a schematic, not a measurement.</desc>
+  <g stroke="#8d9d94" stroke-width="6" stroke-linecap="round">
+    <path d="M143 100 H219 M143 120 H219 M291 100 H367 M291 120 H367" />
+  </g>
+  <circle cx="111" cy="110" r="54" fill="#bd6956" />
+  <circle cx="255" cy="110" r="48" fill="#4e6660" />
+  <circle cx="399" cy="110" r="54" fill="#bd6956" />
+  <g dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="37" text-anchor="middle">
+    <text x="111" y="112">O</text>
+    <text x="255" y="112">C</text>
+    <text x="399" y="112">O</text>
+  </g>
+</svg>
