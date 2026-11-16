@@ -1,10 +1,7 @@
-# Shared theme update (2026-11-16d)
+# One shared H1 rule (2026-11-16e)
 
-This is a targeted update, not a replacement homepage.
-
-- Upload `style.css` to the website root.
-- Upload `RLT/index.html` only if the existing RLT header is the same as the one you supplied; it is preserved here and only the CSS cache version is changed.
-- Leave the existing root `index.html`, all graphics, `scripts/theme.js`, and `data/` intact.
-- In the existing root `index.html`, update its CSS URL to `style.css?v=20261116d` to ensure browsers refresh it.
-
-Both pages share one theme palette. Dark `h1` uses `skyblue`; light uses `#16425b`. Existing structural RLT classes remain so its layout is not broken, but the page-specific theme palette is removed.
+- Replace the root `style.css` only; leave your working homepage, header, scripts, and graphics unchanged.
+- All pages use exactly one `h1` CSS rule. Dark: `skyblue`; light: `#16425b`. Size, weight and spacing are also shared.
+- `RLT/index.html` is included only to refresh its stylesheet cache URL. Your updated header is preserved.
+- Change the existing homepage stylesheet URL to `style.css?v=20261116e` if necessary.
+- RLT layout classes remain for its proof cards and grids, but **there are no page-specific H1 selectors**.
