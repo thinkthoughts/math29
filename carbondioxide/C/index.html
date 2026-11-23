@@ -1,1 +1,168 @@
-<html></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Independent research applying Reading Level Test (RLT) to the scientific software of [C]Worthy: C-Star, ROMS-Tools, and UCLA-ROMS.">
+  <title>[C]Worthy research · carbondioxide.now</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #fafaf7;
+      --fg: #212927;
+      --soft: #5a6761;
+      --line: #d7ddd7;
+      --subtle: #f0f3ed;
+      --accent: #285e4f;
+      --accent2: #dfece5;
+      --max: 980px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#141b18; --fg:#e8efe9; --soft:#b4c3b8; --line:#34443a; --subtle:#1e2a23; --accent:#a1dcc0; --accent2:#263e32; }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(calc(100% - 42px), var(--max)); margin: auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .top { display: flex; justify-content: space-between; gap: 18px; align-items: center; padding: 18px 0; }
+    .brand { font-size: 16px; font-weight: 300; letter-spacing: .015em; color: var(--fg); text-decoration: none; white-space: nowrap; }
+    .nav { display: flex; gap: 22px; font-size: 13px; }
+    .nav a { color: var(--soft); text-decoration: none; }
+    .nav a:hover { color: var(--fg); text-decoration: underline; }
+    main { padding-bottom: 72px; }
+    .hero { padding: 73px 0 57px; border-bottom: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 12px; font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 600; color: var(--accent); }
+    h1 { font-size: clamp(3rem, 8.2vw, 6.1rem); letter-spacing: -.065em; line-height: 1.03; font-weight: 300; margin: 0 0 28px; }
+    h2 { font-size: clamp(1.55rem, 3.2vw, 2.2rem); line-height: 1.2; letter-spacing: -.035em; font-weight: 400; margin: 0 0 15px; }
+    h3 { font-size: 1.05rem; line-height: 1.35; font-weight: 620; margin: 0 0 7px; }
+    .lead { font-size: clamp(1.16rem, 2.1vw, 1.52rem); line-height: 1.5; max-width: 780px; font-weight: 350; margin: 0; }
+    .lede-note { color: var(--soft); font-size: 14px; margin-top: 23px; max-width: 790px; }
+    .actions { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 30px; font-size: 14px; }
+    .actions a { font-weight: 600; }
+    section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+    .section-intro { color: var(--soft); max-width: 730px; margin-top: 0; }
+    .cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+    .panel { border: 1px solid var(--line); border-radius: 12px; padding: 23px 20px; background: var(--subtle); }
+    .panel p { margin: 0; font-size: 14px; color: var(--soft); }
+    .panel .mini { margin: 0 0 12px; color: var(--accent); text-transform: uppercase; letter-spacing: .1em; font-size: 11px; font-weight: 700; }
+    .progress { list-style: none; padding: 0; margin: 24px 0 0; }
+    .progress li { display: grid; grid-template-columns: 108px 1fr; gap: 20px; padding: 19px 0; border-top: 1px solid var(--line); }
+    .progress time, .progress .step { color: var(--accent); font-size: 12px; font-weight: 650; letter-spacing: .03em; }
+    .progress p { margin: 6px 0 0; color: var(--soft); }
+    .status { display: inline-block; border-radius: 999px; padding: 3px 10px; color: var(--fg); border: 1px solid var(--line); font-size: 11px; font-weight: 600; vertical-align: middle; margin-left: 8px; white-space: nowrap; }
+    .note { border-left: 3px solid var(--accent); padding: 3px 0 3px 18px; margin: 24px 0 0; color: var(--soft); }
+    .small { font-size: 14px; }
+    .repos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; margin: 24px 0 0; }
+    .repos a { display: block; border: 1px solid var(--line); border-radius: 9px; padding: 12px 15px; text-decoration: none; font-size: 14px; }
+    .repos a:hover { background: var(--subtle); }
+    .repos span { display: block; font-size: 12px; color: var(--soft); }
+    footer { display: flex; gap: 15px; justify-content: space-between; flex-wrap: wrap; padding: 26px 0 42px; color: var(--soft); font-size: 12px; }
+    footer a { color: inherit; }
+    @media (max-width: 680px) { .hero { padding: 51px 0 45px; } .cols, .repos { grid-template-columns: 1fr; } .progress li { grid-template-columns: 1fr; gap: 4px; } .top { align-items: flex-start; } .nav { gap: 12px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap top">
+      <a class="brand" href="/">carbondioxide.now</a>
+      <nav class="nav" aria-label="Page navigation">
+        <a href="#research">Research</a>
+        <a href="#progress">Progress</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Carbon dioxide · Ocean science · Verification</p>
+      <h1>[C]Worthy</h1>
+      <p class="lead">Ocean carbon removal depends on physical measurements, mathematical models, and software that other people can examine. We are studying how to make the connections among those claims independently verifiable.</p>
+      <p class="lede-note">Independent research applying Reading Level Test (RLT) to [C]Worthy’s open-source C-Star, ROMS-Tools, and UCLA-ROMS projects. The original software is developed and maintained by [C]Worthy; this research is conducted independently.</p>
+      <div class="actions">
+        <a href="#progress">Read the progress report ↓</a>
+        <a href="https://github.com/CWorthy-ocean" rel="noopener noreferrer">[C]Worthy on GitHub ↗</a>
+      </div>
+    </div>
+
+    <section id="research" aria-labelledby="research-title">
+      <p class="eyebrow">The research</p>
+      <h2 id="research-title">From scientific claims to checkable evidence.</h2>
+      <p class="section-intro">[C]Worthy's software helps prepare, run, and analyze ocean simulations. RLT records exact claims, their assumptions and sources, and what independent checking actually establishes. We use each tool for what it can demonstrate.</p>
+      <div class="cols">
+        <article class="panel">
+          <p class="mini">01 · Model</p>
+          <h3>C-Star + UCLA-ROMS</h3>
+          <p>Model configurations, computational grids, simulation workflows, and reproducible inputs.</p>
+        </article>
+        <article class="panel">
+          <p class="mini">02 · Measure</p>
+          <h3>ROMS-Tools</h3>
+          <p>Ocean data preparation, carbon quantities, numerical conversions, and analysis of modeled uptake.</p>
+        </article>
+        <article class="panel">
+          <p class="mini">03 · Verify</p>
+          <h3>RLT + Lean</h3>
+          <p>Source-pinned reading points, kernel-checked arithmetic, selected general proofs, and documented correspondence scope.</p>
+        </article>
+      </div>
+      <p class="note small">Each form of evidence has its own role: mathematical proofs check specified relationships, numerical tests examine implementations, and model validation and observations establish physical correspondence.</p>
+    </section>
+
+    <section id="progress" aria-labelledby="progress-title">
+      <p class="eyebrow">Progress report · November 23, 2026</p>
+      <h2 id="progress-title">Independent audit and development.</h2>
+      <p class="section-intro">We began with four source-pinned repositories, comparing scientific claims, mathematical relationships, and executable implementations. Findings, candidate corrections, and verification records are organized in local research branches for independent review.</p>
+      <ol class="progress">
+        <li>
+          <span class="step">001 · Assessment</span>
+          <div><h3>Source-pinned investigation <span class="status">Completed</span></h3><p>Mapped existing tests and provenance records, identified verification opportunities, and reported an initial mismatch between accepted grid configurations and input-file partitioning.</p></div>
+        </li>
+        <li>
+          <span class="step">002 · Tiling</span>
+          <div><h3>Grid partitioning and joining <span class="status">Review</span></h3><p>Developed candidate repairs for uneven processor splits and reconstructing tiled files. The evidence package includes compiled-Fortran comparisons, regression tests, and RLT/Lean proof artifacts. The next stage is independent replay and integration review.</p></div>
+        </li>
+        <li>
+          <span class="step">003 · CO₂</span>
+          <div><h3>Carbon units and conversion <span class="status">Repair</span></h3><p>Added an independent expected value for the tonnes-CO₂ conversion and documented its atomic-weight source. The current review is refining the supported unit dimensions and their regression tests.</p></div>
+        </li>
+        <li>
+          <span class="step">004 · Geometry</span>
+          <div><h3>Vertical-coordinate correspondence <span class="status">Review</span></h3><p>Compared parameter conventions and numerical formulas with the UCLA-ROMS reference, including zero-parameter cases. Further work examines numerical stability for small parameter values.</p></div>
+        </li>
+        <li>
+          <span class="step">005 · Uptake</span>
+          <div><h3>DIC-based carbon uptake <span class="status">Scientific review</span></h3><p>A candidate correction changes the reported uptake for releases that remove dissolved inorganic carbon. Scientific review is examining the intended uptake definition, conservation budget, and applicable assumptions.</p></div>
+        </li>
+        <li>
+          <span class="step">006–007 · Evidence</span>
+          <div><h3>Provenance and independent verification <span class="status">In progress</span></h3><p>Tracing river-chemistry ratios and reviewing proposed repairs, test results, mathematical statements, and scientific meaning. Development is organized on dedicated research branches pending verification.</p></div>
+        </li>
+      </ol>
+      <p class="note small"><strong>Evidence status:</strong> proposed patches are under independent review; reported tests are being replayed; modeled carbon uptake is interpreted alongside its assumptions and physical observations.</p>
+    </section>
+
+    <section id="sources" aria-labelledby="sources-title">
+      <p class="eyebrow">Open source</p>
+      <h2 id="sources-title">Read the code.</h2>
+      <p class="section-intro">Our research uses these public repositories. The original scientific software is credited to its maintainers. Research changes are prepared in dedicated branches for publication after review.</p>
+      <div class="repos">
+        <a href="https://github.com/thinkthoughts/rlt">Reading Level Test <span>RLT · verification framework</span></a>
+        <a href="https://github.com/thinkthoughts/C-Star">C-Star <span>Research fork · orchestration</span></a>
+        <a href="https://github.com/thinkthoughts/roms-tools">ROMS-Tools <span>Research fork · ocean data and analysis</span></a>
+        <a href="https://github.com/thinkthoughts/ucla-roms">UCLA-ROMS <span>Research fork · Fortran model reference</span></a>
+      </div>
+    </section>
+  </main>
+  <div class="wrap">
+    <footer>
+      <span>carbondioxide.now · Independent scientific verification research</span>
+      <span>Leading specifications admit trailing generalizations.</span>
+    </footer>
+  </div>
+</body>
+</html>
+
