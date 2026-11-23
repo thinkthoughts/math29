@@ -114,41 +114,54 @@
 
     <section id="progress" aria-labelledby="progress-title">
       <p class="eyebrow">Progress report · November 23, 2026</p>
-      <h2 id="progress-title">Independent audit and development.</h2>
-      <p class="section-intro">We began with four source-pinned repositories, comparing scientific claims, mathematical relationships, and executable implementations. Findings, candidate corrections, and verification records are organized in local research branches for independent review.</p>
+      <h2 id="progress-title">From independent audit to verified engineering.</h2>
+      <p class="section-intro">RLT-CSTAR-001 through 008 have developed source-pinned findings, mathematical proofs, reproducible tests, and reviewed software improvements across C-Star, ROMS-Tools, and UCLA-ROMS. Accepted engineering changes are assembled on local integration branches for the next CI verification stage.</p>
+      <div class="cols" aria-label="Reported RLT-CSTAR-008 verification results">
+        <div class="panel"><p class="mini">Reference comparison</p><h3>68 / 68 tilings</h3><p>Partition and join comparisons across two grids matched UCLA-ROMS reference tools.</p></div>
+        <div class="panel"><p class="mini">Formal verification</p><h3>17 RLT · 21 Lean</h3><p>Kernel-accepted certificates and checked theorems; one RLT case remains beyond the term-node limit.</p></div>
+        <div class="panel"><p class="mini">Regression coverage</p><h3>151 new tests</h3><p>112 ROMS-Tools and 39 C-Star tests passed in the reported integration comparisons.</p></div>
+      </div>
       <ol class="progress">
         <li>
           <span class="step">001 · Assessment</span>
-          <div><h3>Source-pinned investigation <span class="status">Completed</span></h3><p>Mapped existing tests and provenance records, identified verification opportunities, and reported an initial mismatch between accepted grid configurations and input-file partitioning.</p></div>
+          <div><h3>Source-pinned investigation <span class="status">Completed</span></h3><p>Mapped existing verification, identified cross-repository correspondence questions, and established an initial grid-partitioning discrepancy.</p></div>
         </li>
         <li>
           <span class="step">002 · Tiling</span>
-          <div><h3>Grid partitioning and joining <span class="status">Review</span></h3><p>Developed candidate repairs for uneven processor splits and reconstructing tiled files. The evidence package includes compiled-Fortran comparisons, regression tests, and RLT/Lean proof artifacts. The next stage is independent replay and integration review.</p></div>
+          <div><h3>Grid partitioning and joining <span class="status">Accepted locally</span></h3><p>Reviewed uneven-grid partitioning, tile placement, and coarse-grid joining against UCLA-ROMS tools. Replays matched all 68 tested tilings across two grids.</p></div>
         </li>
         <li>
           <span class="step">003 · CO₂</span>
-          <div><h3>Carbon units and conversion <span class="status">Repair</span></h3><p>Added an independent expected value for the tonnes-CO₂ conversion and documented its atomic-weight source. The current review is refining the supported unit dimensions and their regression tests.</p></div>
+          <div><h3>Carbon units and conversion <span class="status">Accepted locally</span></h3><p>Added an independently derived tonnes-CO₂ conversion test and an explicit dimensional units contract. Review also corrected case-sensitive prefixes, where Mmol and mmol differ by a factor of one billion.</p></div>
         </li>
         <li>
           <span class="step">004 · Geometry</span>
-          <div><h3>Vertical-coordinate correspondence <span class="status">Review</span></h3><p>Compared parameter conventions and numerical formulas with the UCLA-ROMS reference, including zero-parameter cases. Further work examines numerical stability for small parameter values.</p></div>
+          <div><h3>Vertical-coordinate calculations <span class="status">Accepted locally</span></h3><p>Added zero-parameter support and numerically stable stretching formulas in ROMS-Tools and UCLA-ROMS. High-precision checks and three full UCLA-ROMS analytical runs support the changes; upstream compiler and CI reference checks follow.</p></div>
         </li>
         <li>
           <span class="step">005 · Uptake</span>
-          <div><h3>DIC-based carbon uptake <span class="status">Scientific review</span></h3><p>A candidate correction changes the reported uptake for releases that remove dissolved inorganic carbon. Scientific review is examining the intended uptake definition, conservation budget, and applicable assumptions.</p></div>
+          <div><h3>DIC-based carbon uptake <span class="status">Scientific review</span></h3><p>An independent analytical model distinguishes additional air–sea CO₂ uptake from net DIC retained in a model domain. The proposed correction remains isolated while its intended scientific quantity and assumptions are clarified.</p></div>
         </li>
         <li>
           <span class="step">006–007 · Evidence</span>
-          <div><h3>Provenance and independent verification <span class="status">In progress</span></h3><p>Tracing river-chemistry ratios and reviewing proposed repairs, test results, mathematical statements, and scientific meaning. Development is organized on dedicated research branches pending verification.</p></div>
+          <div><h3>Scientific provenance and verification <span class="status">Reviewed</span></h3><p>Traced source calculations, river-chemistry conventions, and numerical behavior; developed RLT certificates, Lean companion proofs, and independent replay evidence.</p></div>
+        </li>
+        <li>
+          <span class="step">008 · Integration</span>
+          <div><h3>Independent acceptance <span class="status">Local candidates</span></h3><p>Replayed findings from fresh checkouts, repaired additional review findings, and assembled accepted patches into separate local ROMS-Tools, C-Star, and UCLA-ROMS integration branches. Scientific questions remain recorded for domain-expert review.</p></div>
+        </li>
+        <li>
+          <span class="step">009 · Next</span>
+          <div><h3>Fork CI and contribution preparation <span class="status">Planned</span></h3><p>Run the integration branches through fork CI, inspect the remaining environment-dependent tests, and prepare individually reviewable upstream contributions.</p></div>
         </li>
       </ol>
-      <p class="note small"><strong>Evidence status:</strong> proposed patches are under independent review; reported tests are being replayed; modeled carbon uptake is interpreted alongside its assumptions and physical observations.</p>
+      <p class="note small"><strong>Evidence status:</strong> Figures above are from the recorded RLT-CSTAR-008 replay and acceptance package. Integration branches remain local; GitHub CI and upstream scientific review are forthcoming. Twenty-nine tidal tests depend on a Git LFS dataset unavailable to the local runner.</p>
     </section>
 
     <section id="sources" aria-labelledby="sources-title">
       <p class="eyebrow">Open source</p>
       <h2 id="sources-title">Read the code.</h2>
-      <p class="section-intro">Our research uses these public repositories. The original scientific software is credited to its maintainers. Research changes are prepared in dedicated branches for publication after review.</p>
+      <p class="section-intro">Our research uses these public repositories. The original scientific software is credited to its maintainers. Reviewed research changes are assembled on local integration branches for further CI verification and individual upstream review.</p>
       <div class="repos">
         <a href="https://github.com/thinkthoughts/rlt">Reading Level Test <span>RLT · verification framework</span></a>
         <a href="https://github.com/thinkthoughts/C-Star">C-Star <span>Research fork · orchestration</span></a>
@@ -165,4 +178,3 @@
   </div>
 </body>
 </html>
-
